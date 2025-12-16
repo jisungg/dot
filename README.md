@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dot
 
-## Getting Started
+Dot is a note-taking system designed to help ideas connect, not just accumulate.
 
-First, run the development server:
+Instead of folders, tags, or rigid hierarchies, Dot treats notes as points in a shared conceptual space. Notes can be linked, clustered, revisited, and reinterpreted over time, with AI acting as an assistant for reflection and discovery, not as a replacement for thinking.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Dot is intentionally structure-light but meaning-heavy.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What problem Dot is solving
+Most note apps optimize for storage:
+- capture everything
+- sort it later
+- forget it anyway
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dot optimizes for continuity of thought:
+- how ideas relate
+- how themes emerge
+- how past notes remain alive and useful
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The goal is not “more notes,” but better thinking over time.
 
-## Learn More
+## Core principles
+- Notes are atomic
+Each note represents a single idea, observation, or thought.
+- Structure emerges, it isn’t enforced
+Connections are created intentionally or discovered later.
+- AI assists, it does not decide
+AI helps surface relationships, summaries, and patterns — the user stays in control.
+- Visualization is a lens, not a database
+Graphs help explore ideas; they do not dictate storage.
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
+### Frontend
+- Next.js
+- React + TS
+- D3.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
+- Next.js API routes (server-only)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Core logic
+- `lib/services`: application logic
+- `lib/ai`: AI helpers and prompts
+- `lib/jobs`: background processing
 
-## Deploy on Vercel
+### DB
+- PostgreSQL
+- Prisma ORM
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Auth
+- Auth.js (NextAuth)
